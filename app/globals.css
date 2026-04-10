@@ -140,9 +140,18 @@ p {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-smooth;
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
   }
 }

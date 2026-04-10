@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/footer";
+import StaggeredMenu from "@/components/StaggeredMenu";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,12 +27,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const menuItems = [
+    { label: "Home", ariaLabel: "Go to home page", link: "/" },
+    { label: "About", ariaLabel: "Learn about us", link: "/about" },
+    { label: "Services", ariaLabel: "View our services", link: "/services" },
+    { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+  ];
+
+  const socialItems = [
+    { label: "Twitter", link: "https://twitter.com" },
+    { label: "GitHub", link: "https://github.com" },
+    { label: "LinkedIn", link: "https://linkedin.com" },
+  ];
   return (
     <html lang="en" className={cn("font-sans", inter.variable)}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StaggeredMenu
+          isFixed={true}
+          position="right"
+          items={menuItems}
+          socialItems={socialItems}
+          displaySocials
+          displayItemNumbering={true}
+          menuButtonColor="#ffffff"
+          openMenuButtonColor="#fff"
+          changeMenuColorOnOpen={true}
+          colors={["#B19EEF", "#5227FF"]}
+          accentColor="#5227FF"
+        />
         {children}
+        <Footer />
       </body>
     </html>
   );
