@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
+import Aurora from "@/components/Aurora";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,6 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="font-sans">
       <body className="antialiased">
+        <div className="fixed inset-0 -z-50 bg-[#000000]">
+          <Aurora />
+        </div>
         <StaggeredMenu
           isFixed={true}
           position="right"
@@ -41,7 +45,9 @@ export default function RootLayout({
           colors={["#B19EEF", "#5227FF"]}
           accentColor="#5227FF"
         />
-        {children}
+        <main className="relative z-10">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

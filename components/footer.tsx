@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="max-w-6xl mx-auto py-12 md:py-24 lg:py-32">
+    <footer className="relative z-10 max-w-6xl mx-auto py-12 md:py-24 lg:py-32 text-white">
       <div className="flex flex-col items-center justify-center gap-12 lg:grid lg:grid-cols-4 lg:items-start">
         <div>Logo</div>
         <div className="flex flex-col gap-2 mx-auto text-center lg:text-left">
@@ -31,7 +31,7 @@ const Footer = () => {
               width="28"
               height="28"
               fill="none"
-              stroke="#000000"
+              stroke="#FFFFFF"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -46,8 +46,8 @@ const Footer = () => {
               viewBox="0 0 24 24"
               width="28"
               height="28"
-              fill="#000000"
-              stroke="#000000"
+              fill="#FFFFFF"
+              stroke="#FFFFFF"
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -61,8 +61,8 @@ const Footer = () => {
               viewBox="0 0 24 24"
               width="28"
               height="28"
-              fill="#000000"
-              stroke="#000000"
+              fill="#FFFFFF"
+              stroke="#FFFFFF"
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"

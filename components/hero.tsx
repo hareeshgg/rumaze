@@ -1,8 +1,8 @@
-import React from "react";
-
 const Hero = () => {
   return (
-    <div className="m-2 mt-14 bg-black h-[calc(100vh-1rem)] w-[calc(100vw-1rem)] rounded-lg"></div>
+    <div className="relative h-screen w-full flex items-center justify-center">
+      <h1 className="text-white text-6xl font-bold">RUMAZE</h1>
+    </div>
   );
 };
 
