@@ -421,7 +421,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div
-      className={`sm-scope z-40 ${isFixed ? "fixed top-0 left-0 w-full h-dvh text-black" : "w-full h-full"}`}
+      className={`sm-scope z-40 ${isFixed ? "fixed top-0 left-0 w-full h-dvh text-white" : "w-full h-full"}`}
     >
       <div
         className={
@@ -466,7 +466,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           aria-label="Main navigation header"
         >
           <div
-            className={`sm-logo flex items-center select-none pointer-events-auto text-black transition-opacity duration-300 ${
+            className={`sm-logo flex items-center select-none pointer-events-auto text-white transition-opacity duration-300 ${
               open ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}
             aria-label="Logo"
@@ -477,7 +477,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           <button
             ref={toggleBtnRef}
             className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${
-              open ? "text-black" : "text-black"
+              open ? "text-black" : "text-white"
             }`}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
@@ -496,7 +496,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               >
                 {textLines.map((l, i) => (
                   <span
-                    className="sm-toggle-line block h-[1em] leading-none text-black"
+                    className={`sm-toggle-line block h-[1em] leading-none text-white ${open ? "text-black" : "text-white"}`}
                     key={i}
                   >
                     {l}
@@ -507,16 +507,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
             <span
               ref={iconRef}
-              className="sm-icon text-black relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+              className="sm-icon text-white relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
               aria-hidden="true"
             >
               <span
                 ref={plusHRef}
-                className="sm-icon-line text-black absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                className="sm-icon-line text-white absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
               />
               <span
                 ref={plusVRef}
-                className="sm-icon-line sm-icon-line-v text-black absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                className="sm-icon-line sm-icon-line-v text-white absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
               />
             </span>
           </button>
@@ -605,11 +605,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
       <style>{`
 .sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; pointer-events: none; }
-.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; background: #FEFFFE; pointer-events: none; z-index: 20; }
+.sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; background: transparent; pointer-events: none; z-index: 20; }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }
 .sm-scope .sm-logo-img { display: block; height: 32px; width: auto; object-fit: contain; }
-.sm-scope .sm-toggle { position: relative; display: inline-flex; align-items: center; gap: 0.3rem; background: transparent; border: none; cursor: pointer; color: #e9e9ef; font-weight: 500; line-height: 1; overflow: visible; }
+.sm-scope .sm-toggle { position: relative; display: inline-flex; align-items: center; gap: 0.3rem; background: transparent; border: none; cursor: pointer; font-weight: 500; line-height: 1; overflow: visible; }
 .sm-scope .sm-toggle:focus-visible { outline: 2px solid #ffffffaa; outline-offset: 4px; border-radius: 4px; }
 .sm-scope .sm-line:last-of-type { margin-top: 6px; }
 .sm-scope .sm-toggle-textWrap { position: relative; margin-right: 0.5em; display: inline-block; height: 1em; overflow: hidden; white-space: nowrap; width: var(--sm-toggle-width, auto); min-width: var(--sm-toggle-width, auto); }
