@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import Aurora from "@/components/Aurora";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -45,9 +46,8 @@ export default function RootLayout({
           colors={["#B19EEF", "#5227FF"]}
           accentColor="#5227FF"
         />
-        <main className="relative z-10">
-          {children}
-        </main>
+        <main className="relative z-10">{children}</main>
+        <CTA />
         <Footer />
       </body>
     </html>
