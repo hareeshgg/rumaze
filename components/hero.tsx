@@ -14,7 +14,7 @@ const Hero = () => {
           delay={100}
           tag="span"
           textAlign="left"
-          trigger={subtitleRef}
+          animateOnLoad={true}
         />
         <br />
         <SplitText
@@ -24,7 +24,7 @@ const Hero = () => {
           tag="span"
           textAlign="left"
           to={{ opacity: 1, y: 0, delay: 0.5 }}
-          trigger={subtitleRef}
+          animateOnLoad={true}
         />
         <br />
         <span className="pl-8 md:pl-8 lg:pl-12">
@@ -34,7 +34,7 @@ const Hero = () => {
             tag="span"
             textAlign="left"
             to={{ opacity: 1, y: 0, delay: 1.0 }}
-            trigger={subtitleRef}
+            animateOnLoad={true}
           />{" "}
           <SplitText
             text="designed"
@@ -43,7 +43,7 @@ const Hero = () => {
             tag="span"
             textAlign="left"
             to={{ opacity: 1, y: 0, delay: 1.2 }}
-            trigger={subtitleRef}
+            animateOnLoad={true}
           />
         </span>
       </h1>
@@ -58,6 +58,7 @@ const Hero = () => {
           tag="p"
           textAlign="left"
           to={{ opacity: 1, y: 0, delay: 1.5 }}
+          animateOnLoad={true}
         />
         <SplitText
           text="WE DESIGN THE REALITY."
@@ -66,6 +67,7 @@ const Hero = () => {
           tag="p"
           textAlign="left"
           to={{ opacity: 1, y: 0, delay: 1.8 }}
+          animateOnLoad={true}
         />
       </div>
     </div>

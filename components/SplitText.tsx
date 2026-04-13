@@ -23,6 +23,7 @@ export interface SplitTextProps {
   textAlign?: React.CSSProperties['textAlign'];
   onLetterAnimationComplete?: () => void;
   trigger?: React.RefObject<HTMLElement | null> | HTMLElement | string;
+  animateOnLoad?: boolean;
 }
 
 const SplitText: React.FC<SplitTextProps> = ({
@@ -39,7 +40,8 @@ const SplitText: React.FC<SplitTextProps> = ({
   tag = 'p',
   textAlign = 'center',
   onLetterAnimationComplete,
-  trigger
+  trigger,
+  animateOnLoad = false
 }) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
@@ -114,7 +116,7 @@ const SplitText: React.FC<SplitTextProps> = ({
               duration,
               ease,
               stagger: delay / 1000,
-              scrollTrigger: {
+              scrollTrigger: animateOnLoad ? undefined : {
                 trigger: trigger ? (typeof trigger === 'object' && 'current' in trigger ? trigger.current : trigger) : el,
                 start,
                 once: true,
@@ -154,7 +156,8 @@ const SplitText: React.FC<SplitTextProps> = ({
         threshold,
         rootMargin,
         fontsLoaded,
-        trigger
+        trigger,
+        animateOnLoad
       ],
       scope: ref
     }
