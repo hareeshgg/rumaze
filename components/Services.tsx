@@ -1,6 +1,15 @@
 import SplitText from "./SplitText";
 
 const Services = () => {
+  const services = [
+    { id: 1, title: "Branding" },
+    { id: 2, title: "Product Design" },
+    { id: 3, title: "MVP Design" },
+    { id: 4, title: "Web Design" },
+    { id: 5, title: "Webflow Development" },
+    { id: 6, title: "Custom Solutions" },
+  ];
+
   return (
     <div className="mt-24 space-y-8">
       <div className="pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20">
@@ -57,6 +66,34 @@ const Services = () => {
                 textAlign="left"
                 to={{ opacity: 1, y: 0, delay: 1.5 }}
               />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-24 px-4">
+        <div className=" xl:max-w-5xl mx-auto">
+          <div className="flex flex-col items-center xl:items-end justify-center">
+            <div className="space-y-4">
+              {services.map((service) => (
+                <div key={service.id} className="flex flex-row gap-2">
+                  <SplitText
+                    text={"0" + service.id}
+                    className="italic text-white text-md md:text-lg lg:text-xl xl:text-2xl"
+                    delay={50}
+                    tag="span"
+                    textAlign="left"
+                    to={{ opacity: 1, y: 0, delay: 1.5 }}
+                  />
+                  <SplitText
+                    text={service.title}
+                    className="block text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+                    delay={50}
+                    tag="span"
+                    textAlign="left"
+                    to={{ opacity: 1, y: 0, delay: 1.5 }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
