@@ -16,7 +16,7 @@ const Projects = () => {
           />
           <SplitText
             text="works"
-            className="text-white"
+            className="text-white italic"
             delay={50}
             tag="span"
             textAlign="left"

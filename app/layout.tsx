@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
@@ -11,6 +11,13 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   weight: "300",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+  style: ["italic", "normal"],
 });
 
 export const metadata: Metadata = {
@@ -36,7 +43,7 @@ export default function RootLayout({
     { label: "LinkedIn", link: "https://linkedin.com" },
   ];
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased">
         <div className="fixed inset-0 -z-50 bg-[#000000]">
           <Aurora />

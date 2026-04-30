@@ -27,7 +27,7 @@ const Services = () => {
               text="No compromise "
               className="block text-white"
               delay={50}
-              tag="h1"
+              tag="span"
               textAlign="left"
               to={{ opacity: 1, y: 0, delay: 0.5 }}
             />
@@ -36,15 +36,15 @@ const Services = () => {
                 text="between"
                 className="block text-white"
                 delay={50}
-                tag="h1"
+                tag="span"
                 textAlign="left"
                 to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
               <SplitText
                 text="&nbsp;attractive"
-                className="block text-white"
+                className="block text-white italic"
                 delay={50}
-                tag="h1"
+                tag="span"
                 textAlign="left"
                 to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
@@ -54,15 +54,15 @@ const Services = () => {
                 text="and"
                 className="block text-white"
                 delay={50}
-                tag="h1"
+                tag="span"
                 textAlign="left"
                 to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
               <SplitText
                 text="&nbsp;smart"
-                className="text-white"
+                className="block text-white italic"
                 delay={50}
-                tag="h1"
+                tag="span"
                 textAlign="left"
                 to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
@@ -77,11 +77,11 @@ const Services = () => {
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className="flex flex-row gap-2 items-baseline"
+                  className="flex flex-row gap-2 items-center"
                 >
                   <SplitText
                     text={"0" + service.id}
-                    className="text-white text-md md:text-lg lg:text-xl xl:text-2xl"
+                    className="text-white italic text-md md:text-lg lg:text-xl xl:text-2xl"
                     delay={50}
                     tag="p"
                     textAlign="left"
