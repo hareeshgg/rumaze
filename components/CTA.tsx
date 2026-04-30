@@ -42,7 +42,7 @@ const CTA = () => {
               d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
             />
           </defs>
-          <text className="text-[10px] lg:text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.2em] fill-black">
+          <text className="text-[10px] lg:text-[11px] xl:text-[12px] font-thin uppercase tracking-[0.2em] fill-black">
             <textPath href="#circlePath" startOffset="0%">
               Book A Call • Book A Call •
             </textPath>

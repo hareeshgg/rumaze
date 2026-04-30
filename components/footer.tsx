@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="flex flex-col items-center justify-center gap-12 lg:grid lg:grid-cols-4 lg:items-start">
         <div>Logo</div>
         <div className="flex flex-col gap-2 mx-auto text-center lg:text-left">
-          <h1 className="font-semibold mb-2 md:mb-4">OUR ADDRESS</h1>
+          <h1 className="font-thin mb-2 md:mb-4">OUR ADDRESS</h1>
           <p>
             Kelly Hoppen Interiors Ltd <br /> Unit 5 Vencourt Place,
             <br /> London, W6 9NU
@@ -16,14 +16,14 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex flex-col gap-2 mx-auto text-center lg:text-left">
-          <h1 className="font-semibold mb-2 md:mb-4">HOURS</h1>
+          <h1 className="font-thin mb-2 md:mb-4">HOURS</h1>
           <p>
             Mon - Fri: 9am - 6pm <br />
             Sat & Sun: Closed
           </p>
         </div>
         <div className="flex flex-col gap-2 mx-auto text-center lg:text-left">
-          <h1 className="font-semibold mb-2 md:mb-4">FOLLOW US</h1>
+          <h1 className="font-thin mb-2 md:mb-4">FOLLOW US</h1>
           <div className="flex gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"

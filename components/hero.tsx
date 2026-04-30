@@ -1,7 +1,6 @@
 "use client";
 import { useRef } from "react";
 import SplitText from "./SplitText";
-import ModelViewer from "./ModelViewer";
 
 const Hero = () => {
   const subtitleRef = useRef<HTMLDivElement>(null);
@@ -13,7 +12,7 @@ const Hero = () => {
       <h1 className="relative z-10 text-white text-5xl md:text-7xl lg:text-8xl xl:text-9xl pl-8 md:pl-24 lg:pl-28 pb-8 lg:pb-12">
         <SplitText
           text="Elegance"
-          className="italic pl-4 md:pl-0"
+          className="pl-4 md:pl-0"
           delay={100}
           tag="span"
           textAlign="left"
@@ -41,7 +40,7 @@ const Hero = () => {
           />{" "}
           <SplitText
             text="designed"
-            className="italic text-white"
+            className="text-white"
             delay={100}
             tag="span"
             textAlign="left"

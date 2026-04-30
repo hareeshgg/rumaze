@@ -20,54 +20,54 @@ const Services = () => {
             delay={50}
             tag="h1"
             textAlign="left"
-            to={{ opacity: 1, y: 0, delay: 1.5 }}
+            to={{ opacity: 1, y: 0, delay: 0.5 }}
           />
-          <div className="lg:pl-52">
+          <h1 className="lg:pl-52 text-4xl md:text-7xl lg:text-8xl xl:text-9xl">
             <SplitText
               text="No compromise "
-              className="block text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl"
+              className="block text-white"
               delay={50}
-              tag="span"
+              tag="h1"
               textAlign="left"
-              to={{ opacity: 1, y: 0, delay: 1.5 }}
+              to={{ opacity: 1, y: 0, delay: 0.5 }}
             />
-            <div className="flex flex-row">
+            <div className="flex flex-row items-baseline">
               <SplitText
                 text="between"
-                className="block text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl"
+                className="block text-white"
                 delay={50}
-                tag="span"
+                tag="h1"
                 textAlign="left"
-                to={{ opacity: 1, y: 0, delay: 1.5 }}
+                to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
               <SplitText
                 text="&nbsp;attractive"
-                className="italic text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl"
+                className="block text-white"
                 delay={50}
-                tag="span"
+                tag="h1"
                 textAlign="left"
-                to={{ opacity: 1, y: 0, delay: 1.5 }}
+                to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <SplitText
                 text="and"
-                className="block text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl"
+                className="block text-white"
                 delay={50}
-                tag="span"
+                tag="h1"
                 textAlign="left"
-                to={{ opacity: 1, y: 0, delay: 1.5 }}
+                to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
               <SplitText
                 text="&nbsp;smart"
-                className="italic text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl"
+                className="text-white"
                 delay={50}
-                tag="span"
+                tag="h1"
                 textAlign="left"
-                to={{ opacity: 1, y: 0, delay: 1.5 }}
+                to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
             </div>
-          </div>
+          </h1>
         </div>
       </div>
       <div className="mt-24 px-4">
@@ -75,22 +75,25 @@ const Services = () => {
           <div className="flex flex-col items-center xl:items-end justify-center">
             <div className="space-y-4">
               {services.map((service) => (
-                <div key={service.id} className="flex flex-row gap-2">
+                <div
+                  key={service.id}
+                  className="flex flex-row gap-2 items-baseline"
+                >
                   <SplitText
                     text={"0" + service.id}
-                    className="italic text-white text-md md:text-lg lg:text-xl xl:text-2xl"
+                    className="text-white text-md md:text-lg lg:text-xl xl:text-2xl"
                     delay={50}
-                    tag="span"
+                    tag="p"
                     textAlign="left"
-                    to={{ opacity: 1, y: 0, delay: 1.5 }}
+                    to={{ opacity: 1, y: 0, delay: 0.5 }}
                   />
                   <SplitText
                     text={service.title}
                     className="block text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
                     delay={50}
-                    tag="span"
+                    tag="p"
                     textAlign="left"
-                    to={{ opacity: 1, y: 0, delay: 1.5 }}
+                    to={{ opacity: 1, y: 0, delay: 0.5 }}
                   />
                 </div>
               ))}

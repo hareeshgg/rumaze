@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import Aurora from "@/components/Aurora";
 import CTA from "@/components/CTA";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: "300",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +36,7 @@ export default function RootLayout({
     { label: "LinkedIn", link: "https://linkedin.com" },
   ];
   return (
-    <html lang="en" className="font-sans">
+    <html lang="en" className={`${inter.variable}`}>
       <body className="antialiased">
         <div className="fixed inset-0 -z-50 bg-[#000000]">
           <Aurora />

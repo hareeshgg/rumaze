@@ -47,7 +47,7 @@ const FAQ = () => {
           <div className="flex flex-row items-baseline mb-4">
             <SplitText
               text="Got"
-              className="italic text-white text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-light"
+              className="italic text-white text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-thin"
               delay={100}
               tag="span"
               textAlign="left"
@@ -56,7 +56,7 @@ const FAQ = () => {
 
             <SplitText
               text="&nbsp;question?"
-              className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-light tracking-tighter"
+              className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-thin tracking-tighter"
               delay={150}
               tag="span"
               textAlign="left"
@@ -73,7 +73,7 @@ const FAQ = () => {
                 onClick={() => toggleAccordion(index)}
                 className="w-full py-4 md:py-5 flex items-center justify-between text-left transition-all duration-300 hover:pl-4 cursor-pointer relative z-40"
               >
-                <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-white/90 group-hover:text-white transition-colors duration-300">
+                <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-thin text-white/90 group-hover:text-white transition-colors duration-300">
                   {item.question}
                 </span>
                 <motion.div
@@ -94,7 +94,7 @@ const FAQ = () => {
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <div className="pb-4 md:pb-8 pl-0 md:pl-16 max-w-3xl">
-                      <p className="text-white/60 text-lg md:text-xl leading-relaxed font-light">
+                      <p className="text-white/60 text-lg md:text-xl leading-relaxed font-thin">
                         {item.answer}
                       </p>
                     </div>
