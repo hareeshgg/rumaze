@@ -151,21 +151,25 @@ h6 {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+
   .split-parent {
     vertical-align: baseline;
     overflow: visible !important;
   }
+
   .split-line {
     display: block !important;
     overflow: visible !important;
     padding-bottom: 0.15em;
     margin-bottom: -0.15em;
   }
+
   .split-word,
   .split-char {
     display: inline-block !important;
@@ -175,14 +179,60 @@ h6 {
     padding-right: 0.08em;
     margin-right: -0.08em;
   }
+
   body::-webkit-scrollbar {
     display: none;
   }
+
   html {
     @apply font-sans scroll-smooth;
     scrollbar-width: none;
   }
+
   html::-webkit-scrollbar {
     display: none;
   }
+}
+
+.input-field {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  color: white;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.input-field:focus {
+  outline: none;
+  border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+.budget-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.budget-btn.active {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+.budget-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: white;
 }
