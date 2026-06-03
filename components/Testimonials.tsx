@@ -135,12 +135,12 @@ const Testimonials = () => {
                         </div>
                     ))}
                 </div>
-                <div className="flex items-center justify-center">
+                {/* <div className="flex items-center justify-center">
                     <Button size="lg" variant="outline" className="bg-transparent hover:bg-white/10 transition-colors hover:text-white text-xl px-10 py-8 text-white rounded-full cursor-pointer">
                         Read all reviews
                         <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
-                </div>
+                </div> */}
             </div>
         </section>
     );
