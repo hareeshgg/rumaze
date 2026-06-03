@@ -466,19 +466,17 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           aria-label="Main navigation header"
         >
           <div
-            className={`sm-logo flex items-center select-none pointer-events-auto text-white transition-opacity duration-300 ${
-              open ? "opacity-0 pointer-events-none" : "opacity-100"
-            }`}
+            className={`sm-logo flex items-center select-none pointer-events-auto text-white transition-opacity duration-300 ${open ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
             aria-label="Logo"
           >
-            RUMAZE
+            rumaze
           </div>
 
           <button
             ref={toggleBtnRef}
-            className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-thin leading-none overflow-visible pointer-events-auto ${
-              open ? "text-black" : "text-white"
-            }`}
+            className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-thin leading-none overflow-visible pointer-events-auto ${open ? "text-black" : "text-white"
+              }`}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="staggered-menu-panel"
