@@ -4,9 +4,48 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import SplitText from "./SplitText";
 
+interface FormData {
+    name: string;
+    email: string;
+    message: string;
+    budget: string;
+}
+
 const Contact = () => {
-    const [budget, setBudget] = useState("10-20K");
+
     const budgetOptions = ["< $5K", "$5-10K", "$10-20K", "$20-50K"];
+
+    const [formData, setFormData] = useState<FormData>({
+        name: "",
+        email: "",
+        message: "",
+        budget: "$5-10K"
+    });
+
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async () => {
+
+        setLoading(true);
+        console.log(formData);
+        setFormData({
+            name: "",
+            email: "",
+            message: "",
+            budget: ""
+        })
+        alert("Thank you making a request, we'll soon reach out to you")
+        // add api call here
+        setLoading(false);
+    }
 
     return (
         <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48' id="contact">
@@ -57,15 +96,15 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                         <div className="flex flex-col">
                             <label className="text-white/40 text-xs uppercase tracking-widest mb-2">Name</label>
-                            <input className="input-field" type="text" placeholder="Your name" />
+                            <input className="input-field" type="text" placeholder="Your name" value={formData.name} onChange={handleChange} name="name" />
                         </div>
                         <div className="flex flex-col row-span-2 order-99 lg:order-0">
                             <label className="text-white/40 text-xs uppercase tracking-widest mb-2">Message</label>
-                            <textarea className="input-field h-full min-h-[120px] resize-none" placeholder="Your project details"></textarea>
+                            <textarea className="input-field h-full min-h-[120px] resize-none" placeholder="Your project details" value={formData.message} onChange={handleChange} name="message"></textarea>
                         </div>
                         <div className="flex flex-col">
                             <label className="text-white/40 text-xs uppercase tracking-widest mb-2">Email</label>
-                            <input className="input-field" type="email" placeholder="Your email address" />
+                            <input className="input-field" type="email" placeholder="Your email address" value={formData.email} onChange={handleChange} name="email" />
                         </div>
                     </div>
 
@@ -75,8 +114,10 @@ const Contact = () => {
                             {budgetOptions.map((option) => (
                                 <button
                                     key={option}
-                                    onClick={() => setBudget(option)}
-                                    className={`budget-btn ${budget === option ? "active" : ""}`}
+                                    type="button"
+                                    onClick={() => setFormData(prev => ({ ...prev, budget: option }))}
+                                    className={`budget-btn ${formData.budget === option ? "active" : ""}`}
+                                    value={formData.budget}
                                 >
                                     {option}
                                 </button>
@@ -84,9 +125,9 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <button className="relative overflow-hidden w-full p-5 flex items-center justify-center gap-2 border border-white/30 rounded-full text-white text-xl transition-all duration-300 hover:border-white/60 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:w-[120%] after:h-[120%] after:bg-[radial-gradient(circle,rgba(0,150,255,0.4)_0%,transparent_70%)] after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300">
-                        <span className="relative z-10">Send request</span>
-                        <ArrowRight size={20} className="relative z-10" />
+                    <button className="relative overflow-hidden w-full p-5 flex items-center justify-center gap-2 border border-white/30 rounded-full text-white text-xl transition-all duration-300 hover:border-white/60 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:w-[120%] after:h-[120%] after:bg-[radial-gradient(circle,rgba(0,150,255,0.4)_0%,transparent_70%)] after:-translate-x-1/2 after:-translate-y-1/2 after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300" onClick={handleSubmit} disabled={loading}>
+                        <span className="relative z-10">{loading ? "Sending..." : "Send request"}</span>
+                        {!loading && <ArrowRight size={20} className="relative z-10" />}
                     </button>
                 </div>
 
