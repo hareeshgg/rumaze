@@ -134,11 +134,17 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       panel.querySelectorAll(".sm-socials-link"),
     ) as HTMLElement[];
 
+    const getSafeYPercent = (el: HTMLElement) => {
+      const val = gsap.getProperty(el, "yPercent");
+      const num = typeof val === "number" ? val : parseFloat(val as string);
+      return isNaN(num) ? -100 : num;
+    };
+
     const layerStates = layers.map((el) => ({
       el,
-      start: Number(gsap.getProperty(el, "yPercent")),
+      start: getSafeYPercent(el),
     }));
-    const panelStart = Number(gsap.getProperty(panel, "yPercent"));
+    const panelStart = getSafeYPercent(panel);
 
     // Initial states for open animation to be used in fromTo
     const itemStates = { yPercent: 140, rotate: 10 };
@@ -149,8 +155,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     layerStates.forEach((ls, i) => {
       tl.fromTo(
         ls.el,
-        { yPercent: ls.start, xPercent: 0 },
-        { yPercent: 0, xPercent: 0, duration: 0.5, ease: "power4.out" },
+        { yPercent: ls.start, xPercent: 0, y: 0 },
+        { yPercent: 0, xPercent: 0, y: 0, duration: 0.5, ease: "power4.out" },
         i * 0.07,
       );
     });
@@ -159,10 +165,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const panelInsertTime = lastTime + (layerStates.length ? 0.08 : 0);
     const panelDuration = 0.65;
 
+
+
     tl.fromTo(
       panel,
-      { yPercent: panelStart, xPercent: 0 },
-      { yPercent: 0, xPercent: 0, duration: panelDuration, ease: "power4.out" },
+      { yPercent: panelStart, xPercent: 0, y: 0 },
+      { yPercent: 0, xPercent: 0, y: 0, duration: panelDuration, ease: "power4.out" },
       panelInsertTime,
     );
 
@@ -261,6 +269,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     closeTweenRef.current = gsap.to(all, {
       yPercent: -100,
       xPercent: 0,
+      y: 0,
       duration: 0.32,
       ease: "power3.in",
       overwrite: "auto",
