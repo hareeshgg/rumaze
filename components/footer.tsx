@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className='relative overflow-hidden pt-20 pb-10'>
       {/* Content */}
-      <div className='max-w-8xl mx-auto px-12'>
+      <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20'>
         <div className='flex flex-col gap-16'>
 
           {/* Bottom Bar */}
