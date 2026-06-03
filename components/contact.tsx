@@ -30,8 +30,8 @@ const Contact = () => {
                                         key={i}
                                         x1="50"
                                         y1="50"
-                                        x2={50 + 45 * Math.cos((i * 15 * Math.PI) / 180)}
-                                        y2={50 + 45 * Math.sin((i * 15 * Math.PI) / 180)}
+                                        x2={(50 + 45 * Math.cos((i * 15 * Math.PI) / 180)).toFixed(4)}
+                                        y2={(50 + 45 * Math.sin((i * 15 * Math.PI) / 180)).toFixed(4)}
                                         stroke="currentColor"
                                         strokeWidth="0.5"
                                         strokeOpacity={0.6}

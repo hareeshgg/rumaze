@@ -68,7 +68,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full mt-24 md:mt-32 lg:mt-48 pb-24 space-y-12 overflow-hidden" id="projects">
+    <div className="w-full mt-24 md:mt-32 lg:mt-48 pb-8 md:pb-12 lg:pb-16 xl:pb-20 space-y-12 overflow-hidden" id="projects">
       <div className="max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex flex-row items-center justify-between">
         <h3 className="flex items-center justify-center gap-4 text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
           <SplitText

@@ -11,7 +11,7 @@ const Services = () => {
   ];
 
   return (
-    <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48 pb-24' id="services">
+    <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48 pb-8 md:pb-12 lg:pb-16 xl:pb-20' id="services">
       <div>
         <div>
           <SplitText
@@ -70,7 +70,7 @@ const Services = () => {
           </h1>
         </div>
       </div>
-      <div className="mt-24">
+      <div className="mt-12 md:mt-16 lg:20 xl:24">
         <div className="xl:max-w-5xl mx-auto">
           <div className="flex flex-col items-center xl:items-end justify-center">
             <div className="space-y-4">

@@ -41,7 +41,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48 pb-24' id="faq">
+    <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48 pb-8 md:pb-12 lg:pb-16 xl:pb-20' id="faq">
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
           <div className="flex flex-row items-baseline mb-4">
