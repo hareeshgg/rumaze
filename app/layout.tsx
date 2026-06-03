@@ -55,7 +55,7 @@ export default function RootLayout({
           socialItems={socialItems}
           displaySocials
           displayItemNumbering={true}
-          menuButtonColor="#000000"
+          menuButtonColor="#ffffff"
           openMenuButtonColor="#000000"
           changeMenuColorOnOpen={true}
           colors={["#B19EEF", "#5227FF"]}

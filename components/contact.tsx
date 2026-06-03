@@ -9,7 +9,7 @@ const Contact = () => {
     const budgetOptions = ["< $5K", "$5-10K", "$10-20K", "$20-50K"];
 
     return (
-        <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48'>
+        <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48' id="contact">
             {/* Header Section: "Let's create together" */}
             <div className='flex flex-col lg:flex-row justify-center items-center lg:items-center gap-8 pb-12 lg:pb-20'>
                 <div className="flex flex-col">

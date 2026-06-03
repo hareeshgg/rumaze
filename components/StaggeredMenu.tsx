@@ -494,7 +494,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               >
                 {textLines.map((l, i) => (
                   <span
-                    className={`sm-toggle-line block h-[1em] leading-none text-white ${open ? "text-black" : "text-white"}`}
+                    className="sm-toggle-line block h-[1em] leading-none"
                     key={i}
                   >
                     {l}
@@ -505,16 +505,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
             <span
               ref={iconRef}
-              className="sm-icon text-white relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+              className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
               aria-hidden="true"
             >
               <span
                 ref={plusHRef}
-                className="sm-icon-line text-white absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
               />
               <span
                 ref={plusVRef}
-                className="sm-icon-line sm-icon-line-v text-white absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
               />
             </span>
           </button>
@@ -544,6 +544,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                       href={it.link}
                       aria-label={it.ariaLabel}
                       data-index={idx + 1}
+                      onClick={closeMenu}
                     >
                       <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                         {it.label}

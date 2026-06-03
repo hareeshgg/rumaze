@@ -24,7 +24,7 @@ const CTA = () => {
 
   return (
     <div
-      className="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-50 group cursor-pointer"
+      className="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-10 group cursor-pointer"
       onClick={() => window.open("https://calendly.com", "_blank")} // Placeholder link
     >
       <div
