@@ -12,13 +12,13 @@ const Footer = () => {
             {/* Left: Logo and Copyright */}
             <div className="flex flex-col md:flex-row items-center md:items-end gap-2 md:gap-12 w-full md:w-auto">
               <span className="text-white text-3xl font-bold tracking-tighter">rumaze</span>
-              <span className="text-white/40 text-sm font-light mb-1">rumaze.digital © 2026</span>
+              <span className="text-white/40 text-sm font-light mb-1">rumaze ©{new Date().getFullYear()}</span>
             </div>
 
             {/* Center: Email */}
             <div className="w-full md:w-auto flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2 md:mb-1">
               <a href="mailto:hello@rumaze.digital" className="text-white/60 hover:text-white transition-colors underline underline-offset-4 text-sm">
-                hello@rumaze.digital
+                contact.rumaze@gmail.com
               </a>
             </div>
 

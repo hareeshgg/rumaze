@@ -145,9 +145,9 @@ const Contact = () => {
                         className="w-[120px] h-[120px] rounded-full object-cover grayscale mb-6"
                     />
 
-                    <a href="mailto:hello@rumaze.digital" className="text-[1.5rem] sm:text-[2rem] lg:text-[2.5rem] italic font-light text-white flex items-center gap-4 mb-8 hover:opacity-70 transition-opacity whitespace-nowrap">
+                    <a href="mailto:hello@rumaze.digital" className="text-[1.3rem] sm:text-[1.5rem] lg:text-[2rem] italic font-light text-white flex items-center gap-4 mb-8 hover:opacity-70 transition-opacity whitespace-nowrap">
                         <ArrowRight size={32} className="-rotate-45 shrink-0" />
-                        hello@rumaze.digital
+                        contact.rumaze@gmail.com
                     </a>
 
                     <button className="w-full lg:w-auto px-8 py-4 bg-white text-black border border-white rounded-full uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-4 hover:bg-transparent hover:text-white transition-all">

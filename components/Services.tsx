@@ -112,7 +112,7 @@ const Services = () => {
           <div className="flex flex-col items-center xl:items-end justify-center">
             <div className="space-y-4">
               {services.map((service, index) => (
-                <div key={service.id} className="overflow-hidden">
+                <div key={service.id} className="overflow-hidden pb-4">
                   <button
                     type="button"
                     onClick={() => toggleAccordion(index)}
