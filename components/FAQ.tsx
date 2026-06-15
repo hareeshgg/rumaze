@@ -65,7 +65,7 @@ const FAQ = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-1 relative z-30">
+        <div className="grid grid-cols-1 relative z-30">
           {faqData.map((item, index) => (
             <div key={index} className="overflow-hidden group">
               <button
