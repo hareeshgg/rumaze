@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import Aurora from "@/components/Aurora";
 import CTA from "@/components/CTA";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,7 +62,7 @@ export default function RootLayout({
           colors={["#B19EEF", "#5227FF"]}
           accentColor="#5227FF"
         />
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10"> <Toaster position="top-right" richColors />{children}</main>
         <CTA />
         <Footer />
       </body>

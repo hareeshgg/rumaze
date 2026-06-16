@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import SplitText from "./SplitText";
 import { sendMail } from "@/api/email-notification";
+import { toast } from "sonner"
 
 export interface FormData {
     name: string;
@@ -43,9 +44,13 @@ const Contact = () => {
             message: "",
             budget: ""
         })
-        alert("Thank you making a request, we'll soon reach out to you")
-        // add api call here
+
         const mailRes = await sendMail(formData);
+        if (mailRes.success) {
+            toast.success("Thank you making a request, we'll soon reach out to you")
+        } else {
+            toast.error("Something went wrong, please try again later")
+        }
         setLoading(false);
     }
 
