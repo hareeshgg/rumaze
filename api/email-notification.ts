@@ -4,12 +4,17 @@ import { Resend } from 'resend';
 import type { FormData } from '@/components/contact';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const ownerMail = process.env.OWNER_MAIL;
 
 export async function sendMail(formData: FormData) {
     try {
+        if (!ownerMail) {
+            throw new Error("OWNER_MAIL environment variable is not defined in your .env file.");
+        }
+
         const { data, error } = await resend.emails.send({
             from: 'Rumaze Contact Form <onboarding@resend.dev>',
-            to: 'contact.rumaze@gmail.com',
+            to: ownerMail,
             subject: `New Request from ${formData.name}`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 8px;">
