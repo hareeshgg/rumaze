@@ -3,8 +3,9 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import SplitText from "./SplitText";
+import { sendMail } from "@/api/email-notification";
 
-interface FormData {
+export interface FormData {
     name: string;
     email: string;
     message: string;
@@ -44,6 +45,7 @@ const Contact = () => {
         })
         alert("Thank you making a request, we'll soon reach out to you")
         // add api call here
+        const mailRes = await sendMail(formData);
         setLoading(false);
     }
 
@@ -140,7 +142,7 @@ const Contact = () => {
                     </div>
 
                     <img
-                        src="/ceo_headshot.png"
+                        src="/rumaan.jpeg"
                         alt="CEO"
                         className="w-[120px] h-[120px] rounded-full object-cover grayscale mb-6"
                     />

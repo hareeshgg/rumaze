@@ -96,7 +96,7 @@ const Services = () => {
                 to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
               <SplitText
-                text="&nbsp;smart"
+                text="&nbsp;functional"
                 className="block text-white italic"
                 delay={50}
                 tag="span"
@@ -154,12 +154,12 @@ const Services = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        <div className="pb-4 md:pb-8 pl-0 md:pl-16 max-w-3xl">
-                          <ul className="text-white font-normal text-md md:text-xl space-y-4 leading-relaxed">
-                            {service.items.map((item, index) => (
-                              <li className="flex flex-row mt-4 gap-2" key={index}>
-                                <span className="italic">0{index + 1}.</span>
-                                <span>{item}</span>
+                        <div className="pb-4 md:pb-8 pl-2 md:pl-16 max-w-3xl">
+                          <ul className="text-white font-normal text-xs md:text-lg space-y-2 md:space-y-4 leading-relaxed">
+                            {service.items.map((item, i) => (
+                              <li className="flex flex-row mt-4 gap-2" key={i}>
+                                <span className="italic">{index + 1}.{i + 1}</span>
+                                <span className="italic">{item}</span>
                               </li>
                             ))}
                           </ul>
