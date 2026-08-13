@@ -26,7 +26,9 @@ export const metadata: Metadata = {
   description: "The Art of Thoughtful Living",
   icons: {
     icon: "/rumaze-logo.png",
-  }
+    shortcut: "/rumaze-logo.png",
+    apple: "/rumaze-logo.png",
+  },
 };
 
 export default function RootLayout({
