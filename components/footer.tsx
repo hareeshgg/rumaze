@@ -10,15 +10,15 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="pt-12 mt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center md:items-end gap-10 md:gap-4">
             {/* Left: Logo and Copyright */}
-            <div className="flex flex-col md:flex-row items-center md:items-end gap-2 md:gap-12 w-full md:w-auto">
-              <span className="text-white text-3xl font-bold tracking-tighter">rumaze</span>
-              <span className="text-white/40 text-sm font-light mb-1">rumaze ©{new Date().getFullYear()}</span>
+            <div className="flex md:flex-row items-end justify-center md:items-end gap-2 w-full md:w-auto">
+              <img src="/rumaze-text.png" alt="Rumaze" className="h-4" />
+              <span className="text-white/40 text-sm font-light">©{new Date().getFullYear()}</span>
             </div>
 
             {/* Center: Email */}
             <div className="w-full md:w-auto flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2 md:mb-1">
-              <a href="mailto:hello@rumaze.digital" className="text-white/60 hover:text-white transition-colors underline underline-offset-4 text-sm">
-                contact.rumaze@gmail.com
+              <a href="mailto:contact@rumazedesign.in" className="text-white/60 hover:text-white transition-colors underline underline-offset-4 text-sm">
+                contact@rumazedesign.in
               </a>
             </div>
 

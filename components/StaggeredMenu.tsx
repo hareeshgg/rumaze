@@ -479,7 +479,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               }`}
             aria-label="Logo"
           >
-            rumaze
+            <img src="/rumaze-logo.png" alt="Rumaze" className="size-12 lg:size-8 p-2 lg:p-0" />
           </div>
 
           <button
