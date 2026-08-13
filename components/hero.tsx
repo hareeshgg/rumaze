@@ -11,8 +11,8 @@ const Hero = () => {
 
       <h1 className="relative z-10 text-white text-5xl md:text-7xl lg:text-8xl xl:text-9xl pl-8 md:pl-24 lg:pl-28 pb-8 lg:pb-12">
         <SplitText
-          text="Elegance"
-          className="pl-4 md:pl-0 italic"
+          text="The Art Of"
+          className="pl-4 md:pl-0"
           delay={100}
           tag="span"
           textAlign="left"
@@ -20,8 +20,8 @@ const Hero = () => {
         />
         <br />
         <SplitText
-          text="is not added"
-          className="md:pl-20 lg:pl-38 xl:pl-48"
+          text="Thoughtful"
+          className="md:pl-20 lg:pl-38 xl:pl-48 italic"
           delay={100}
           tag="span"
           textAlign="left"
@@ -29,16 +29,16 @@ const Hero = () => {
           animateOnLoad={true}
         />
         <br />
-        <span className="pl-8 md:pl-8 lg:pl-12">
+        <span className="pl-8 md:pl-8 lg:pl-12 ">
           <SplitText
-            text="but"
+            text="Living"
             delay={100}
             tag="span"
             textAlign="left"
             to={{ opacity: 1, y: 0, delay: 1.0 }}
             animateOnLoad={true}
           />{" "}
-          <SplitText
+          {/* <SplitText
             text="designed"
             className="text-white italic"
             delay={100}
@@ -46,7 +46,7 @@ const Hero = () => {
             textAlign="left"
             to={{ opacity: 1, y: 0, delay: 1.2 }}
             animateOnLoad={true}
-          />
+          /> */}
         </span>
       </h1>
       <div
