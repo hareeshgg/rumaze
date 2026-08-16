@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -11,10 +12,21 @@ const Footer = () => {
 
           {/* Bottom Bar */}
           <div className="pt-12 mt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center md:items-end gap-10 md:gap-4">
-            {/* Left: Logo and Copyright */}
-            <div className="flex md:flex-row items-end justify-center md:items-end gap-2 w-full md:w-auto">
-              <Image src="/rumaze-text.png" alt="Rumaze Design Studio" width={100} height={16} className="h-4 w-auto" />
-              <span className="text-white/40 text-sm font-light">©{new Date().getFullYear()}</span>
+            {/* Left: Logo, Copyright & Legal links */}
+            <div className="flex flex-col md:flex-row items-center md:items-end gap-4 w-full md:w-auto">
+              <div className="flex items-end gap-2">
+                <Image src="/rumaze-text.png" alt="Rumaze Design Studio" width={100} height={16} className="h-4 w-auto" />
+                <span className="text-white/40 text-sm font-light">©{new Date().getFullYear()}</span>
+              </div>
+              <div className="flex gap-4 text-xs text-white/40 font-light md:ml-4">
+                <Link href="/privacy-policy" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+                <span>•</span>
+                <Link href="/terms" className="hover:text-white transition-colors">
+                  Terms & Conditions
+                </Link>
+              </div>
             </div>
 
             {/* Center: Email */}
