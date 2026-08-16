@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import CTA from "@/components/CTA";
 import AuroraWrapper from "@/components/AuroraWrapper";
+import SmoothScroll from "@/components/SmoothScroll";
 import { Toaster } from "sonner";
 
 const inter = Inter({
@@ -20,6 +21,13 @@ const playfair = Playfair_Display({
   display: "swap",
   style: ["italic", "normal"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rumazedesign.in"),
@@ -86,9 +94,31 @@ export default function RootLayout({
     { label: "Instagram", link: "https://instagram.com" },
     { label: "LinkedIn", link: "https://linkedin.com" },
   ];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "InteriorDesignStudio",
+    "name": "Rumaze Design Studio",
+    "url": "https://rumazedesign.in",
+    "logo": "https://rumazedesign.in/rumaze-logo.png",
+    "description": "Premium residential interior design, 3D visualization, and turnkey execution.",
+    "email": "contact@rumazedesign.in",
+    "sameAs": [
+      "https://instagram.com",
+      "https://linkedin.com"
+    ]
+  };
+
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased">
+        <SmoothScroll />
         <div className="fixed inset-0 -z-50 bg-[#000000]">
           <AuroraWrapper />
         </div>

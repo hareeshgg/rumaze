@@ -24,8 +24,16 @@ const CTA = () => {
 
   return (
     <div
+      role="button"
+      tabIndex={0}
+      aria-label="Book a call with Rumaze Design Studio"
       className="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-10 group cursor-pointer"
-      onClick={() => window.open("https://calendly.com", "_blank")} // Placeholder link
+      onClick={() => window.open("https://calendly.com", "_blank")}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          window.open("https://calendly.com", "_blank");
+        }
+      }}
     >
       <div
         ref={circleRef}

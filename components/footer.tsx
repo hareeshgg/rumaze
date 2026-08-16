@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const Footer = () => {
   return (
     <footer className='relative overflow-hidden pt-20 pb-10'>
@@ -11,7 +13,7 @@ const Footer = () => {
           <div className="pt-12 mt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center md:items-end gap-10 md:gap-4">
             {/* Left: Logo and Copyright */}
             <div className="flex md:flex-row items-end justify-center md:items-end gap-2 w-full md:w-auto">
-              <img src="/rumaze-text.png" alt="Rumaze" className="h-4" />
+              <Image src="/rumaze-text.png" alt="Rumaze Design Studio" width={100} height={16} className="h-4 w-auto" />
               <span className="text-white/40 text-sm font-light">©{new Date().getFullYear()}</span>
             </div>
 
