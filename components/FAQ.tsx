@@ -71,6 +71,8 @@ const FAQ = () => {
               <button
                 type="button"
                 onClick={() => toggleAccordion(index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-content-${index}`}
                 className="w-full py-4 md:py-5 flex items-center justify-between text-left transition-all duration-300 hover:pl-4 cursor-pointer relative z-40"
               >
                 <span className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-thin text-white/90 group-hover:text-white transition-colors duration-300">
@@ -88,6 +90,7 @@ const FAQ = () => {
               <AnimatePresence>
                 {activeIndex === index && (
                   <motion.div
+                    id={`faq-content-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

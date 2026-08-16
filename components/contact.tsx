@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 import SplitText from "./SplitText";
 import { sendMail } from "@/api/email-notification";
 import { toast } from "sonner"
@@ -35,24 +36,35 @@ const Contact = () => {
     };
 
     const handleSubmit = async () => {
+        if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+            toast.error("Please fill in your name, email, and message.");
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email.trim())) {
+            toast.error("Please enter a valid email address.");
+            return;
+        }
 
         setLoading(true);
-        console.log(formData);
+
+        const currentFormData = { ...formData };
         setFormData({
             name: "",
             email: "",
             message: "",
-            budget: ""
-        })
+            budget: "$5-10K"
+        });
 
-        const mailRes = await sendMail(formData);
+        const mailRes = await sendMail(currentFormData);
         if (mailRes.success) {
-            toast.success("Thank you making a request, we'll soon reach out to you")
+            toast.success("Thank you for reaching out! We will contact you soon.");
         } else {
-            toast.error("Something went wrong, please try again later")
+            toast.error("Something went wrong, please try again later.");
         }
         setLoading(false);
-    }
+    };
 
     return (
         <div className='max-w-8xl mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-24 md:mt-32 lg:mt-48' id="contact">
@@ -146,9 +158,11 @@ const Contact = () => {
                         </p>
                     </div>
 
-                    <img
+                    <Image
                         src="/rumaan.jpeg"
-                        alt="CEO"
+                        alt="CEO Rumaan"
+                        width={120}
+                        height={120}
                         className="w-[120px] h-[120px] rounded-full object-cover grayscale mb-6"
                     />
 

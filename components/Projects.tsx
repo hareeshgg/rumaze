@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import SplitText from "./SplitText";
 
@@ -123,9 +124,11 @@ const Projects = () => {
             key={card.id}
             className="shrink-0 snap-start w-[95vw] sm:w-[60vw] md:w-[50vw] lg:w-[40vw] aspect-square relative group"
           >
-            <img
+            <Image
               src={card.image}
-              alt={`Project ${card.id}`}
+              alt={`Rumaze Interior Project ${card.id}`}
+              fill
+              sizes="(max-width: 640px) 95vw, (max-width: 768px) 60vw, (max-width: 1024px) 50vw, 40vw"
               className="object-cover w-full h-full"
             />
           </div>

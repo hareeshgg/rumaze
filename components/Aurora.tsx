@@ -182,7 +182,27 @@ export default function Aurora(props: AuroraProps) {
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
+    let isVisible = true;
+    let lastColorStopsKey = "";
+    let cachedColorStops: number[][] = colorStopsArray;
+
+    const parseColorStops = (stops: string[]) => {
+      const key = stops.join(",");
+      if (key !== lastColorStopsKey) {
+        lastColorStopsKey = key;
+        cachedColorStops = stops.map((hex: string) => {
+          const c = new Color(hex);
+          return [c.r, c.g, c.b];
+        });
+      }
+      return cachedColorStops;
+    };
+
     const update = (t: number) => {
+      if (!isVisible || document.hidden) {
+        animateId = 0;
+        return;
+      }
       animateId = requestAnimationFrame(update);
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       if (program) {
@@ -190,19 +210,54 @@ export default function Aurora(props: AuroraProps) {
         program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
         program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
         const stops = propsRef.current.colorStops ?? colorStops;
-        program.uniforms.uColorStops.value = stops.map((hex: string) => {
-          const c = new Color(hex);
-          return [c.r, c.g, c.b];
-        });
+        program.uniforms.uColorStops.value = parseColorStops(stops);
         renderer.render({ scene: mesh });
       }
     };
-    animateId = requestAnimationFrame(update);
 
+    const startAnimation = () => {
+      if (!animateId && isVisible && !document.hidden) {
+        animateId = requestAnimationFrame(update);
+      }
+    };
+
+    const stopAnimation = () => {
+      if (animateId) {
+        cancelAnimationFrame(animateId);
+        animateId = 0;
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopAnimation();
+      } else {
+        startAnimation();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          startAnimation();
+        } else {
+          stopAnimation();
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(ctn);
+
+    startAnimation();
     resize();
 
     return () => {
-      cancelAnimationFrame(animateId);
+      stopAnimation();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      observer.disconnect();
       window.removeEventListener("resize", resize);
       if (ctn && gl.canvas.parentNode === ctn) {
         ctn.removeChild(gl.canvas);

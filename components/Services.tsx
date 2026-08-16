@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import SplitText from "./SplitText";
 import { useState } from "react";
-import { div } from "three/src/nodes/math/OperatorNode.js";
 
 const Services = () => {
 
@@ -55,11 +54,11 @@ const Services = () => {
             text="SERVICES"
             className="block text-white"
             delay={50}
-            tag="h1"
+            tag="h2"
             textAlign="left"
             to={{ opacity: 1, y: 0, delay: 0.5 }}
           />
-          <h1 className="lg:pl-52 text-4xl md:text-7xl lg:text-8xl xl:text-9xl">
+          <h2 className="lg:pl-52 text-4xl md:text-7xl lg:text-8xl xl:text-9xl">
             <SplitText
               text="No compromise "
               className="block text-white"
@@ -104,7 +103,7 @@ const Services = () => {
                 to={{ opacity: 1, y: 0, delay: 0.5 }}
               />
             </div>
-          </h1>
+          </h2>
         </div>
       </div>
       <div className="mt-12 md:mt-16 lg:20 xl:24">
@@ -116,7 +115,9 @@ const Services = () => {
                   <button
                     type="button"
                     onClick={() => toggleAccordion(index)}
-                    className="flex flex-row items-center justify-between w-full"
+                    aria-expanded={activeIndex === index}
+                    aria-controls={`service-content-${index}`}
+                    className="flex flex-row items-center justify-between w-full cursor-pointer"
                   >
                     <div className="flex flex-row items-center gap-2">
                       <SplitText
@@ -149,6 +150,7 @@ const Services = () => {
                   <AnimatePresence>
                     {activeIndex === index && (
                       <motion.div
+                        id={`service-content-${index}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
